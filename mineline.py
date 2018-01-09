@@ -17,10 +17,15 @@ y='\033[93m'
 lb='\033[94m'
 pi='\033[95m'
 lc='\033[96m'
+blocks=[b,r,g,o,pu,c,lgra,dg,lr,lgre,y,lb,pi,lc]
+bn=["coal","melon","grass","oranges","grapefruit","water","wood","rock","settle","turf","lemon","diamond","ruby","polished diamond"]
+print(len(blocks))
 rock=dg
 wood=lgra
-world=[[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock],[rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock,rock]][::-1]
-sb="wood"
+sb=bn[6]
+cbn=blocks[6]
+def print(value):
+    sys.stdout.write(value+"\n")
 def getChar(): # StackOverFlow: https://stackoverflow.com/questions/510357/python-read-a-single-character-from-the-user
     # figure out which function to use once, and store it in _func
     if "_func" not in getChar.__dict__:
@@ -59,6 +64,8 @@ def print_world():
         print('█'.join(itmp))
         a+=1
     print("\n\n\n"+sb)
+    if invTime<time.time()+10:
+        print("Inventory:\n\n"+"\n\n".join(Inventory))
     print(bla)
 def build(x,y,b):
     global world
@@ -75,7 +82,20 @@ def down():
 def right():
     global x
     x+=1
+def save(world):
+    i=open(sys.argv[1],"w")
+    i.write(str([world,Inventory]))
+    i.close()
+def load():
+    global world,Inventory
+    i=open(sys.argv[1],"r")
+    i2=i.read()
+    world=eval(i2)[0]
+    Inventory=eval(i2)[1]
+    i.close()
 def Player():
+    global cbn,sb,Inventory,invTime
+    invTime=2000000000
     while True:
         char=getChar()
         if char=="w":
@@ -87,14 +107,65 @@ def Player():
         if char=="d":
             right()
         if char=="b":
-            build(x,y,eval(sb))
+            abcd=0
+            abcd2=0
+            if sb=="rock":
+                abcd=0
+                abcd2=5
+            elif sb=="diamond":
+                abcd=1
+                abcd2=9
+            elif sb=="wood":
+                abcd=2
+                abcd2=5
+            if int(Inventory[abcd][abcd2:])>0:
+                Inventory[abcd]=str(["Rock: ","Diamond: ","Wood: "][abcd])+str(int(Inventory[abcd][abcd2:])-1)
+                build(x,y,cbn)
+        if char=="x":
+            save(world)
+        if char=="r":
+            if world[y][x]==dg:
+                Inventory[0]=str("Rock: ")+str(int(Inventory[0][5:])+1)
+            if world[y][x]==lb:
+                print("diamond")
+                Inventory[1]=str("Diamond: ")+str(int(Inventory[1][9:])+1)
+            if world[y][x]==lgra:
+                Inventory[2]=str("Wood: ")+str(int(Inventory[2][5:])+1)            
+            build(x,y,g)
+        if char=="c":
+            try:
+                sb=bn[bn.index(sb)-1]
+                cbn=blocks[blocks.index(cbn)-1]
+            except:
+                sb=bn[14]
+                cbn=blocks[14]
+        if char=="v":
+            try:
+                sb=bn[bn.index(sb)+1]
+                cbn=blocks[blocks.index(cbn)+1]
+            except:
+                sb=bn[0]
+                cbn=blocks[0]
+        if char=="i":
+            invTime=time.time()
 def start():
+    load()
     global world,x,y,world
     x=10+random.randint(0,len(world)-11)
     y=random.randint(0,len(world)-1)
     Thread(target=Player).start()
+    avg_fps=0
+    frames=0
     while True:
         os.system("clear")
+        bef = time.time()
         print_world()
-        time.sleep(.05)
+        frames+=1
+        aft = time.time()
+        avg_fps*=frames-1
+        avg_fps+=aft-bef
+        avg_fps/=frames
+        print(str(int(1/avg_fps))+" FPS")
+        abc=random.randint(5,20)
+        time.sleep(1/abc)
 start()
