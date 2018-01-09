@@ -1,17 +1,25 @@
 # mineline
 Terminal/text-based Minecraft Clone. Written in Python 3, no extra packages required. 
 # controls
-Up    - W
+Up                - W
 
-Down  - S
+Down              - S
 
-Left  - A
+Left              - A
 
-Right - D
+Right             - D
 
-Build - B
+Build             - B
 
-Break - R (not implemented, yet.) ;)
+Break             - R
+
+Save              - X
+
+Back in Blocks    - C
+
+Forward in Blocks - V
+
+Inventory         - I
 
 # license
 NONE. LITERALLY NONE. 
