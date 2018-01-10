@@ -45,3 +45,23 @@ Example:
 
 `python3 /path/bla/mineline.py /home/bla/SAVEFILE`
 
+# support
+Tested:
+
+macOS
+
+Windows 10 (PowerShell)
+
+Likely:
+
+Windows 8,7,(Vista? ) (in PowerShell)
+
+Linux
+
+Ubuntu
+
+Debian
+
+Possible (in future):
+
+\*nix (may work)
