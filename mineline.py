@@ -8,12 +8,13 @@ a=0
 gib=[]
 count=0
 prev=25
-bla="\033[39m"
-b='\033[30m'
+bla2="\033[39m"
+bla='\033[30m'
 r='\033[31m'
 g='\033[32m'
 o='\033[33m'
-b='\033[34m'
+br='\033[0;33;47m'
+blu='\033[34m'
 pu='\033[35m'
 c='\033[36m'
 lgra='\033[37m'
@@ -24,8 +25,8 @@ y='\033[93m'
 lb='\033[94m'
 pi='\033[95m'
 lc='\033[96m'
-blocks=[b,r,g,o,pu,c,lgra,dg,lr,lgre,y,lb,pi,lc]
-bn=["Coal","Melon","Grass","Oranges","Grapefruit","Water","Wood","Rock","Settle","Turf","Lemon","Diamond","Ruby","Polished Diamond"]
+blocks=[bla,r,g,blu,pu,c,lgra,dg,lr,lgre,y,lb,pi,lc]
+bn=["Coal","Melon","Grass","Oranges","Water","Grapefruit","Pond","Wood","Rock","Settle","Turf","Lemon","Diamond","Ruby","Polished Diamond"]
 file=sys.argv[1]
 rock=dg
 wood=lgra
@@ -57,17 +58,14 @@ def getChar(): # StackOverFlow: https://stackoverflow.com/questions/510357/pytho
 
             getChar._func=_ttyRead
     return getChar._func()
-def print_world_new():
+def Render():
     global b,itmp,lp,avg_fps
     itmp=eval(str(world[y-16:y+16]))
-    itmp[15][x]=b
-    a=0
+    itmp[15][x]=blu
     for i in itmp:
-        i=i[x-16:x+16]
-        sys.stdout.write('█'.join(i)+"\n")
-        a+=1
-    sys.stdout.write("\n\n\n\n"+sb+("\x1b[A"*(len(sb))+"\n\n\n"+" "*(int(len(sb)))+"\n\n"))
-    time.sleep(avg_fps)
+        sys.stdout.write("█".join(i[x-16:x+16])+"\n")
+    itmp2="./render"
+    a=0
     try:
         if invTime<time.time()+10:
             sys.stdout.write("Inventory:\n\n"+"\n\n".join(Inventory)+"\n")
@@ -142,7 +140,6 @@ def Player():
                     if world[y][x]==dg:
                         Inventory[0]=str("Rock: ")+str(int(Inventory[0][5:])+1)
                     if world[y][x]==lb:
-                        sys.stdout.write("diamond")
                         Inventory[1]=str("Diamond: ")+str(int(Inventory[1][9:])+1)
                     if world[y][x]==lgra:
                         Inventory[2]=str("Wood: ")+str(int(Inventory[2][5:])+1)            
@@ -152,8 +149,8 @@ def Player():
                         sb=bn[bn.index(sb)-1]
                         cbn=blocks[blocks.index(cbn)-1]
                     except:
-                        sb=bn[14]
-                        cbn=blocks[14]
+                        sb=bn[15]
+                        cbn=blocks[15]
                 if char==b"v":
                     try:
                         sb=bn[bn.index(sb)+1]
@@ -193,19 +190,20 @@ def Player():
                     if world[y][x]==dg:
                         Inventory[0]=str("Rock: ")+str(int(Inventory[0][5:])+1)
                     if world[y][x]==lb:
-                        sys.stdout.write("diamond")
                         Inventory[1]=str("Diamond: ")+str(int(Inventory[1][9:])+1)
                     if world[y][x]==lgra:
                         Inventory[2]=str("Wood: ")+str(int(Inventory[2][5:])+1)            
                     build(x,y,c)
                 if char=="c":
+                    clear()
                     try:
                         sb=bn[bn.index(sb)-1]
                         cbn=blocks[blocks.index(cbn)-1]
                     except:
-                        sb=bn[14]
-                        cbn=blocks[14]
+                        sb=bn[15]
+                        cbn=blocks[15]
                 if char=="v":
+                    clear()
                     try:
                         sb=bn[bn.index(sb)+1]
                         cbn=blocks[blocks.index(cbn)+1]
@@ -222,7 +220,7 @@ def Player():
 |Inconveinence.          |
 \________________________/""")
 def clear():
-    sys.stdout.write("\x1b[A"*1024)
+    sys.stdout.write("\n\n\n\n\n\n\r\r\r\r\r\r"+"\x1b[A"*1024)
 def start():
     global world,x,y,world,file,Inventory,avg_fps,lp
     avg_fps=0
@@ -234,7 +232,7 @@ def start():
             Inventory=["Rock: 999999999","Diamond: 999999999","Wood: 999999999"]
     except:
         pass
-    avg_fps=0
+    avg_fps=0.1
     frames=0
     file=sys.argv[1]
     load()
@@ -243,7 +241,7 @@ def start():
     y=len(world)-(26+1)
     while True:
         bef = time.time()
-        print_world_new()
+        Render()
         sys.stdout.write("\x1b[A"*len(sb)+"\n")
         frames+=1
         aft = time.time()
